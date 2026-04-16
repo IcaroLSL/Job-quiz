@@ -1,0 +1,321 @@
+[
+  {
+    "question": "1. De acordo com o gabarito, o que são Redes de Computadores?",
+    "options": [
+      "a) Conjuntos de cabos e conectores que interligam computadores fisicamente.",
+      "b) Quaisquer Unidades Lógicas distintas que trocam informações entre Si.",
+      "c) Sistemas operacionais projetados exclusivamente para servidores.",
+      "d) Dispositivos de hardware que roteiam pacotes na internet.",
+      "e) Softwares que permitem a comunicação entre navegadores e servidores web."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "2. Qual a principal vantagem de implementar o Diagrama de Switch?",
+    "options": [
+      "a) A Transmissão de Dados leva, no máximo, 2 Repetições, minimizando o risco de falhas.",
+      "b) Permite a conexão de redes geograficamente distantes utilizando fibra óptica.",
+      "c) Aumenta a velocidade de transmissão para 10 Gbps em todos os dispositivos.",
+      "d) Elimina a necessidade de endereçamento IP na rede local.",
+      "e) Converte sinais digitais em analógicos para transmissão em longa distância."
+    ],
+    "answer": "a"
+  },
+  {
+    "question": "3. O que são os Endereços de Host e Rede no Diagrama de Roteador?",
+    "options": [
+      "a) Endereço de Rede é o MAC Address; Endereço de Host é o IP Público.",
+      "b) Endereço de Rede: Identifica a Rede na qual um Dispositivo está conectado. Endereço de Host: Identifica um Dispositivo específico em uma Rede.",
+      "c) Endereço de Rede é atribuído pelo DHCP; Endereço de Host é fixo na placa de rede.",
+      "d) Endereço de Rede: Identifica o protocolo utilizado; Endereço de Host: Identifica a porta lógica.",
+      "e) Endereço de Rede: Identifica a máscara de sub-rede; Endereço de Host: Identifica o gateway padrão."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "4. Quais são as velocidades suportadas por um cabo Categoria 5e?",
+    "options": [
+      "a) 10 Mbps, 100 Mbps e 1000 Mbps (GigaBit Ethernet - Não Homologada).",
+      "b) Apenas 100 Mbps (FastEthernet).",
+      "c) 1000 Mbps, 10 Gbps e 40 Gbps.",
+      "d) Apenas 10 Mbps (Ethernet) e 16 Mbps (Token Ring).",
+      "e) 100 Mbps, 1000 Mbps e 10000 Mbps (10 GigaBit Ethernet homologada)."
+    ],
+    "answer": "a"
+  },
+  {
+    "question": "5. Explique a estrutura de um cabo Fibra Óptica.",
+    "options": [
+      "a) É composto por quatro pares trançados de cobre revestidos por uma malha metálica.",
+      "b) Transmite Dados usando Luz. Sua Estrutura é composta por Núcleo (Sílica) e Cladding (camada MAIS DENSA que permite a Refração).",
+      "c) Utiliza um fio de cobre central envolto por camadas isolantes que bloqueiam interferência eletromagnética.",
+      "d) É formado por um tubo de vácuo onde a luz viaja sem necessidade de reflexão interna.",
+      "e) Consiste em um condutor metálico oco que transmite ondas de rádio em alta frequência."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "6. Qual é o objetivo de cada Camada na Hierarquia de Protocolos?",
+    "options": [
+      "a) Criptografar os dados para garantir a segurança da comunicação fim-a-fim.",
+      "b) Oferecer determinados serviços às Camadas superiores, isolando essas Camadas dos problemas a serem resolvidos por elas.",
+      "c) Aumentar a velocidade de transmissão dos bits no meio físico.",
+      "d) Controlar o endereço MAC de origem e destino dos quadros.",
+      "e) Roteamento de pacotes entre diferentes redes autônomas."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "7. Uma camada X de uma máquina Transmissora pode se comunicar com uma camada Y de uma máquina Receptora? Por quê?",
+    "options": [
+      "a) Sim, desde que ambas utilizem o mesmo sistema operacional.",
+      "b) Não. Uma Camada X somente se comunica com uma Camada X da Máquina Receptora, pois ambas utilizam o mesmo PROTOCOLO.",
+      "c) Sim, pois a camada física permite a comunicação independente do protocolo de alto nível.",
+      "d) Não, pois a comunicação é sempre vertical entre camadas adjacentes na mesma máquina.",
+      "e) Sim, desde que Y seja uma camada inferior a X para garantir a compatibilidade."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "8. Qual é a definição de Protocolo?",
+    "options": [
+      "a) É a interface física que conecta o computador ao meio de transmissão.",
+      "b) É um conjunto de Regras e Convenções para a comunicação entre Camadas EQUIVALENTES em Máquinas DISTINTAS.",
+      "c) É o software responsável por converter nomes de domínio em endereços IP.",
+      "d) É a unidade de dados transmitida pela camada de transporte.",
+      "e) É a topologia lógica utilizada na interligação dos switches."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "9. O que acontece com uma mensagem ao ser Transmitida?",
+    "options": [
+      "a) Ela é criptografada e enviada diretamente ao endereço IP de destino sem divisões.",
+      "b) Ela será dividida em pequenos pedaços da Mensagem original junto com Cabeçalhos e um Trailer.",
+      "c) Ela é convertida em sinais de luz ou elétricos sem qualquer tipo de encapsulamento.",
+      "d) Ela recebe apenas um cabeçalho da camada de aplicação e é enviada à camada física.",
+      "e) Ela é comprimida e armazenada no buffer até que o receptor solicite a transmissão."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "10. Quais são os 3 Tipos de Comunicação?",
+    "options": [
+      "a) Unicast, Multicast e Broadcast.",
+      "b) Simplex, Half Duplex e Full Duplex.",
+      "c) Síncrono, Assíncrono e Isócrono.",
+      "d) Cliente-Servidor, Peer-to-Peer e Híbrido.",
+      "e) Analógica, Digital e Óptica."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "11. Como funciona um Serviço Orientado à Conexão?",
+    "options": [
+      "a) Cada pacote é enviado independentemente com o endereço de destino completo.",
+      "b) Funciona como um tubo: o Transmissor 'Empurra' os Pacotes de bits sequencialmente e o Receptor recebe na outra extremidade.",
+      "c) O transmissor envia os dados sem verificar se o receptor está pronto ou ativo.",
+      "d) Os dados são enviados em broadcast para todos os dispositivos da rede.",
+      "e) A ordem de chegada dos pacotes não é garantida, mas a velocidade é maior."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "12. Como funciona um Serviço que opera Sem Conexão?",
+    "options": [
+      "a) Um circuito virtual é estabelecido antes do envio dos dados.",
+      "b) Cada Pacote de bits contém o Endereço Completo do destino e é roteado de maneira independente dos outros.",
+      "c) A entrega dos pacotes é confirmada um a um pelo receptor.",
+      "d) O transmissor precisa de uma autorização prévia do receptor para iniciar o envio.",
+      "e) Os pacotes sempre seguem o mesmo caminho físico na rede."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "13. Explique a principal diferença entre um Serviço Orientado à Conexão e um Serviço que opera Sem Conexão.",
+    "options": [
+      "a) Serviços Orientados a Conexão são analógicos; Sem Conexão são digitais.",
+      "b) Nos Orientados a Conexão a ordem de entrega é GARANTIDA (Sequencial); nos Sem Conexão a ordem de entrega NÃO É GARANTIDA.",
+      "c) Serviços Sem Conexão utilizam TCP; Serviços Orientados a Conexão utilizam UDP.",
+      "d) Serviços Orientados a Conexão não utilizam endereçamento IP.",
+      "e) Serviços Sem Conexão exigem uma confirmação de recebimento para cada pacote enviado."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "14. Como é o funcionamento de um Serviço Confiável?",
+    "options": [
+      "a) O Transmissor envia os dados em máxima velocidade sem se preocupar com perdas.",
+      "b) O Receptor confirma com o Transmissor o recebimento de cada Pacote; se não houver confirmação, o Transmissor retransmite.",
+      "c) Utiliza o protocolo UDP para garantir a entrega rápida de streams de vídeo.",
+      "d) Não há retransmissão de pacotes perdidos para não gerar retardo na rede.",
+      "e) A confiabilidade é garantida exclusivamente pelo meio físico (fibra óptica)."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "15. Como é o funcionamento de um Serviço Não Confiável?",
+    "options": [
+      "a) Garante a entrega de 100% dos pacotes, mesmo que com atraso.",
+      "b) Esses Serviços não possuem a confirmação do recebimento do Pacote de bits, o que pode causar perdas.",
+      "c) Utiliza algoritmos complexos de checksum para corrigir erros de bits.",
+      "d) É mais lento que o serviço confiável devido ao excesso de verificações.",
+      "e) Estabelece uma conexão lógica antes de enviar qualquer dado."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "16. Explique a principal diferença entre um Serviço Confiável e um Serviço Não Confiável.",
+    "options": [
+      "a) O Serviço Confiável não tem perda de Pacotes mas gera retardo; o Serviço Não Confiável é mais rápido mas pode perder Pacotes.",
+      "b) O Serviço Confiável utiliza IP; o Serviço Não Confiável utiliza MAC Address.",
+      "c) O Serviço Confiável é usado apenas em redes locais; o Não Confiável é usado na internet.",
+      "d) O Serviço Confiável não utiliza cabeçalhos; o Não Confiável adiciona cabeçalhos a cada pacote.",
+      "e) O Serviço Confiável opera apenas na camada física; o Não Confiável opera na camada de enlace."
+    ],
+    "answer": "a"
+  },
+  {
+    "question": "17. Qual o objetivo do Modelo TCP/IP?",
+    "options": [
+      "a) Substituir o modelo OSI por ser mais simples e ter menos camadas.",
+      "b) Manter intacta as Conexões entre Transmissor e Receptor mesmo que algumas Máquinas ou linhas de transmissão intermediárias deixem de operar.",
+      "c) Definir padrões para cabos e conectores de rede.",
+      "d) Criptografar todos os pacotes que trafegam na camada de internet.",
+      "e) Garantir que todos os pacotes cheguem ao destino em menos de 1 milissegundo."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "18. Qual a função da camada Host-Rede no Modelo TCP/IP?",
+    "options": [
+      "a) Realizar a apresentação e criptografia dos dados da aplicação.",
+      "b) Indicar que o Host deve se conectar com a Rede para que seja possível enviar Pacotes IP.",
+      "c) Controlar o diálogo e sincronização entre aplicações.",
+      "d) Roteamento de pacotes entre diferentes sistemas autônomos.",
+      "e) Garantir a entrega confiável dos dados fim-a-fim."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "19. Qual a função da camada Inter-Redes no Modelo TCP/IP?",
+    "options": [
+      "a) Controlar o fluxo de dados entre processos de aplicação.",
+      "b) Permitir que os Hosts injetem pacotes em qualquer Rede e garantir que eles sejam transmitidos independentemente do Destino. Define o Protocolo IP.",
+      "c) Detectar e corrigir erros ocorridos no meio físico de transmissão.",
+      "d) Converter nomes de domínio (DNS) em endereços IP.",
+      "e) Gerenciar a multiplexação de portas de origem e destino."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "20. Qual a função da camada de Transporte no Modelo TCP/IP?",
+    "options": [
+      "a) Definir o formato dos quadros e o acesso ao meio físico (CSMA/CD).",
+      "b) Permitir que as Entidades Pares dos Hosts de Origem e Destino mantenham uma comunicação.",
+      "c) Mapear endereços IP para endereços físicos (MAC).",
+      "d) Transmitir bits brutos pelo canal de comunicação.",
+      "e) Fornecer serviços de terminal virtual e transferência de arquivos."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "21. Explique a diferença entre os Protocolos TCP e UDP.",
+    "options": [
+      "a) TCP é usado para streaming de vídeo; UDP é usado para e-mail.",
+      "b) TCP é Orientado a Conexão e Confiável; UDP opera Sem Conexão e é Não Confiável.",
+      "c) TCP é Não Confiável e rápido; UDP é Confiável e lento.",
+      "d) TCP opera na camada Inter-Redes; UDP opera na camada de Aplicação.",
+      "e) TCP utiliza portas de 16 bits; UDP utiliza portas de 32 bits."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "22. Qual a função da camada de Aplicação no Modelo TCP/IP?",
+    "options": [
+      "a) Roteamento de pacotes entre redes distintas.",
+      "b) Essa Camada contém todos os Protocolos de Alto Nível (TELNET, FTP, SMTP, HTTP, DNS).",
+      "c) Fragmentação e remontagem de datagramas IP.",
+      "d) Enquadramento de bits e controle de acesso ao meio.",
+      "e) Controle de congestionamento e janelamento."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "23. Cite as principais críticas ao Modelo TCP/IP.",
+    "options": [
+      "a) É muito complexo, possui muitas camadas e é difícil de implementar.",
+      "b) O Modelo não diferencia com clareza os conceitos de SERVIÇOS, INTERFACES E PROTOCOLOS. A Camada Host-Rede não é uma camada no sentido aplicado.",
+      "c) Não suporta transmissão de voz e vídeo em tempo real.",
+      "d) É um modelo proprietário que não funciona em sistemas operacionais de código aberto.",
+      "e) Obriga o uso de endereçamento IPv6, descontinuando o suporte ao IPv4."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "24. Quais as principais funções da camada de Enlace de Dados?",
+    "options": [
+      "a) Roteamento e definição de rotas alternativas.",
+      "b) Lidar com Erros de Transmissão, Enquadramento de bits e Regulação do Fluxo de Dados.",
+      "c) Segmentação de mensagens e controle de sessão.",
+      "d) Conversão de sinais digitais para analógicos e vice-versa.",
+      "e) Criptografia e compressão de dados para envio na rede."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "25. Explique o funcionamento do Método de Contagem de Bytes.",
+    "options": [
+      "a) Utiliza caracteres especiais DLE STX e DLE ETX para marcar início e fim.",
+      "b) Cada quadro possui um Cabeçalho (primeiro bit) que diz o Tamanho do Quadro. Se o Cabeçalho for igual a 1 ou 0, indica ERRO.",
+      "c) Insere um bit 0 após cinco bits 1 consecutivos para evitar confusão com a flag.",
+      "d) Utiliza uma sequência de bits 01111110 para delimitar o início e o fim do quadro.",
+      "e) Baseia-se na verificação de redundância cíclica (CRC) para determinar o tamanho do quadro."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "26. Explique o funcionamento do Método Orientado a Caractere.",
+    "options": [
+      "a) Para transmitir a carga útil, conta-se o número de bytes e insere-se no cabeçalho.",
+      "b) Utiliza caracteres especiais DLE STX (Início) e DLE ETX (Fim). Para transmitir um DLE como carga útil, é necessário duplicá-lo (Enchimento).",
+      "c) Após cinco bits '1', a camada transmissora insere um bit '0'.",
+      "d) O receptor envia um sinal de feedback para autorizar o envio de novos quadros.",
+      "e) O tamanho do quadro é fixo e conhecido previamente por ambas as partes."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "27. Explique o funcionamento do Método de Inserção de Bits.",
+    "options": [
+      "a) Conta o número de caracteres e os insere no início da transmissão.",
+      "b) Cada Quadro começa e termina com um Padrão Especial (Ex: 01111110). Sempre que encontrar cinco '1' consecutivos nos dados, a camada transmissora insere um bit '0'.",
+      "c) Utiliza os caracteres DLE STX no início e DLE ETX no final do quadro.",
+      "d) Envia um byte de confirmação para cada quadro recebido corretamente.",
+      "e) Divide a mensagem em células de tamanho fixo de 53 bytes."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "28. Como funciona as Janelas de Retransmissão Integral e Seletiva?",
+    "options": [
+      "a) Integral: Retransmite apenas o último quadro. Seletiva: Retransmite os três primeiros quadros.",
+      "b) Integral: TODOS os Quadros APÓS o que não foi reconhecido são retransmitidos. Seletiva: APENAS o Quadro que não foi reconhecido é retransmitido.",
+      "c) Integral: O receptor escolhe quais quadros quer receber. Seletiva: O transmissor escolhe quais quadros enviar.",
+      "d) Integral: Utiliza-se em fibra óptica. Seletiva: Utiliza-se em cabos de par trançado.",
+      "e) Integral: Não há retransmissão. Seletiva: Retransmite todos os quadros da janela."
+    ],
+    "answer": "b"
+  },
+  {
+    "question": "29. Explique os Controles de Fluxo baseado em Feedback e Velocidade.",
+    "options": [
+      "a) Feedback: Limita a velocidade sem consultar o receptor. Velocidade: O receptor envia autorizações.",
+      "b) Feedback: O Receptor envia informações de volta para o Transmissor permitindo identificar a situação real. Velocidade: O Protocolo limita a velocidade SEM o Feedback do Receptor.",
+      "c) Feedback: Utiliza um clock externo. Velocidade: Utiliza o sinal de relógio do transmissor.",
+      "d) Feedback: Ocorre na camada física. Velocidade: Ocorre na camada de aplicação.",
+      "e) Feedback: É o mesmo que janela deslizante. Velocidade: É o mesmo que parada e espera."
+    ],
+    "answer": "b"
+  }
+]
