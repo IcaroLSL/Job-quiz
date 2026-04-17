@@ -24,22 +24,22 @@ export default function Home() {
   const { isDark } = useToggleTheme();
   const data:
     MenuIcons[] = [
-      { id: '1', name: 'quiz', icon: 'list-status', path: '/quiz' },
-      { id: '2', name: 'settings', icon: 'cog', path: '/settings' },
+      { id: '1', name: 'Quiz', icon: 'list-status', path: '/quiz' },
+      { id: '2', name: 'Resumos', icon: 'clipboard-text-outline', path: '/resumo' },
+      { id: '3', name: 'Desempenho', icon: 'clock-time-five-outline', path: '/desempenho' },
+      { id: '4', name: 'Configurações', icon: 'cog', path: '/settings' },
     ];
 
   return (
     <ScreenContent title='QuizOS' path="home.tsx">
       <View className='flex-1 w-full gap-4'>
         <View className="bg-white flex items-center justify-self-start w-full flex-row gap-4 p-6 dark:bg-dark-700 dark:rounded-xl rounded-xl">
-          <Pressable onPress={() => router.push('/profile')}>
-            <Image
-              className='w-[5em] h-[5em] object-cover rounded-md'
-              source={{
-                uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsFnRgUL0HqzX_7n59jzk5_lGjlnSuaIWftw&s'
-              }}
-            />
-          </Pressable>
+          <Image
+            className='w-[5em] h-[5em] object-cover rounded-md'
+            source={{
+              uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsFnRgUL0HqzX_7n59jzk5_lGjlnSuaIWftw&s'
+            }}
+          />
           <Text className='text-black dark:text-white text-2xl font-bold'>Hello, Yoku!</Text>
         </View>
 
