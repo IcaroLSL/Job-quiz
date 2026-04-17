@@ -1,7 +1,11 @@
 import  MaterialCommunityIcons  from '@expo/vector-icons/MaterialCommunityIcons';
+import ModalComponent from 'Components/UI/Modal';
 import React, { useEffect, useRef, useCallback, useState } from 'react';
 import { Animated, Modal, Pressable, Text, View, useWindowDimensions } from 'react-native';
 import { useToggleTheme } from 'Hooks/useToggleTheme';
+import { Button } from 'Components/UI/Button';
+import { router, useRouter } from 'expo-router';
+import { EmptyLine } from 'Components/UI/EmptyLine';
 
 interface ModalProps {
   visible: boolean;
@@ -25,6 +29,13 @@ export default function SlideModalComponent({
   const translateX = useRef(new Animated.Value(initialTranslateX)).current;
   const backdropOpacity = useRef(new Animated.Value(0)).current;
   const [internalVisible, setInternalVisible] = useState(false);
+
+  const [ logoutModalVisible, setLogoutModalVisible ] = useState(false);
+  const handleLogoutModal = () => {
+    setLogoutModalVisible(true);
+  };
+
+  const router = useRouter();
 
   const runCloseAnimation = useCallback(() => {
     const exitTranslateX = side === 'left' ? -width : width;
@@ -87,22 +98,23 @@ export default function SlideModalComponent({
   }
 
   return (
+  <>
     <Modal
       visible={true}
       transparent
       animationType="none"
       onRequestClose={handleClose}
-    >
+      >
       <View className="flex-1">
         <Pressable
           className="absolute inset-0"
           onPress={handleClose}
-        >
+          >
           <Animated.View
             pointerEvents="none"
             className="absolute inset-0 bg-black/50"
             style={{ opacity: backdropOpacity }}
-          />
+            />
         </Pressable>
         <Animated.View
           className="h-full bg-white dark:bg-gray-800 p-6"
@@ -111,20 +123,33 @@ export default function SlideModalComponent({
             alignSelf: side === 'left' ? 'flex-start' : 'flex-end',
             transform: [{ translateX }],
           }}
-        >
+          >
           {title && (
-            <>
               <View className="flex-row items-center justify-between mb-4">
                 <Text className="mb-4 text-5xl font-bold text-gray-800 dark:text-white">
                   {title}
                 </Text>
+                <Pressable onPress={handleLogoutModal} className='p-1 relative bg-transparent'>
+                  <MaterialCommunityIcons name="logout" size={30} color={isDark ? "white" : "black"} />
+                </Pressable>
+                <EmptyLine size='small' />
                 <MaterialCommunityIcons name="window-close" size={24} color={isDark ? "white" : "black"} onPress={handleClose} className='absolute top-4 right-4' />
               </View>
-            </>
           )}
           <View className="mb-4">{children}</View>
         </Animated.View>
       </View>
     </Modal>
+
+    {logoutModalVisible && (
+      <ModalComponent visible={logoutModalVisible} onClose={() => setLogoutModalVisible(false)} title="Logout">
+        <Text className='text-black dark:text-white'>Deseja sair?</Text>
+          <View className='flex-row gap-4 mt-4 justify-end'>
+            <Button onPress={() => setLogoutModalVisible(false)} variant="outline"><Text className='text-black dark:text-white'>Cancelar</Text></Button>
+            <Button onPress={() => { setLogoutModalVisible(false); router.navigate('/'); }} variant="default"><Text className='text-white'>Sair</Text></Button>
+          </View>
+        </ModalComponent>
+    )}
+    </>  
   );
 }
