@@ -46,8 +46,9 @@ export default function Home() {
         <ScrollView className='flex-1'>
           <View className='flex-row flex-wrap justify-center gap-4'>
             {data.map((item) => (
-              <Pressable key={item.id} onPress={() => router.push(item.path)} className='w-[6em] h-[6em] bg-white dark:bg-dark-700 active:bg-gray-300 active:opacity-75 rounded-lg flex items-center justify-center'>
+              <Pressable key={item.id} onPress={() => router.push(item.path)} className='w-[7em] h-[7em] bg-white dark:bg-dark-700 active:bg-gray-300 active:opacity-75 rounded-lg flex items-center justify-center'>
                 <MaterialCommunityIcons name={item.icon} size={30} color={isDark ? "white" : "black"} />
+                <Text className='text-sm font-semibold text-black dark:text-white mt-2'>{item.name}</Text>
               </Pressable>
             ))}
           </View>
