@@ -13,8 +13,8 @@ interface ButtonProps {
 export function Button({ children, onPress, variant = 'default', className = '', disabled }: ButtonProps) {
 
   const buttonVariants = {
-    default: `bg-dark-blue-500 active:bg-dark-blue-600 dark:bg-primary-500 dark:active:bg-primary-600 active:opacity-75 font-bold text-white ${disabled ? 'opacity-50' : ''}`,
-    outline: `border border-dark-blue-500 text-dark-blue-500 dark:text-primary-500 dark:font-bold active:bg-dark-blue-600/10 active:opacity-75 ${disabled ? 'opacity-50' : ''}`,
+    default: `bg-indigo-500 active:bg-indigo-600 dark:bg-indigo-500 dark:active:bg-indigo-600 active:opacity-75 font-bold text-white ${disabled ? 'opacity-50' : ''}`,
+    outline: `border border-indigo-500 text-indigo-500 dark:text-indigo-600 dark:font-bold active:bg-indigo-600/10 active:opacity-75 ${disabled ? 'opacity-50' : ''}`,
   };
 
   return (

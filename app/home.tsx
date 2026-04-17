@@ -22,12 +22,12 @@ export default function Home() {
 
   const data:
     MenuIcons[] = [
-      { id: '1', name: 'quiz', path: '/manga' },
+      { id: '1', name: 'quiz', path: '/quiz' },
       { id: '2', name: 'settings', path: '/settings' },
     ];
 
   return (
-    <ScreenContent title='Bayoo' path="home.tsx">
+    <ScreenContent title='QuizOS' path="home.tsx">
       <View className='flex-1 w-full gap-4'>
         <View className="flex items-center justify-self-start w-full flex-row gap-4">
           <Pressable onPress={() => router.push('/profile')}>

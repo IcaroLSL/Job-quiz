@@ -1,5 +1,5 @@
 import { ScreenContent } from 'Components/Page/ScreenContent';
-import { Image, Switch, View, useColorScheme, ScrollView } from 'react-native';
+import { Image, Switch, View, useColorScheme } from 'react-native';
 import { loginSchema } from 'Schemas/validationSchemas';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -41,7 +41,7 @@ export default function Login() {
         <TextApp className='text-3xl font-bold'>Bem-vindo de volta!</TextApp>
         <TextApp className='text-gray-600 dark:text-gray-400'>Faça login para continuar</TextApp>
       </View>
-      <ScrollView className='gap-4 flex items-center w-full'>
+      <View className='gap-4 flex items-center w-full'>
         <Image source={imageSource} className='w-48 h-48 mb-4' />
         
         <View>
@@ -77,7 +77,7 @@ export default function Login() {
         <View>
           <TextApp>Forgot username or password? </TextApp>
         </View>
-      </ScrollView>
+      </View>
     </ScreenContent>
   );
 }

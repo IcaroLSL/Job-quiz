@@ -4,6 +4,7 @@ import { Animated, Modal, Pressable, Text, View, useWindowDimensions } from 'rea
 interface ModalProps {
   visible: boolean;
   title?: string;
+  side?: 'left' | 'right';
   onClose: () => void;
   children: React.ReactNode;
 }
@@ -11,18 +12,22 @@ interface ModalProps {
 export default function SlideModalComponent({
   visible,
   title,
+  side = 'right',
   onClose,
   children,
 }: ModalProps) {
   const { width } = useWindowDimensions();
-  const translateX = useRef(new Animated.Value(width)).current;
+  const initialTranslateX = side === 'left' ? -width : width;
+  const translateX = useRef(new Animated.Value(initialTranslateX)).current;
   const backdropOpacity = useRef(new Animated.Value(0)).current;
   const [internalVisible, setInternalVisible] = useState(false);
 
   const runCloseAnimation = useCallback(() => {
+    const exitTranslateX = side === 'left' ? -width : width;
+
     Animated.parallel([
       Animated.timing(translateX, {
-        toValue: width,
+        toValue: exitTranslateX,
         duration: 250,
         useNativeDriver: true,
       }),
@@ -34,20 +39,20 @@ export default function SlideModalComponent({
     ]).start(() => {
       setInternalVisible(false);
     });
-  }, [width]);
+  }, [side, width]);
 
   // Sync with external visible prop
   useEffect(() => {
     if (visible && !internalVisible) {
       // Opening: reset values and show modal
-      translateX.setValue(width);
+      translateX.setValue(side === 'left' ? -width : width);
       backdropOpacity.setValue(0);
       setInternalVisible(true);
     } else if (!visible && internalVisible) {
       // External close requested: animate out
       runCloseAnimation();
     }
-  }, [visible, internalVisible, width, runCloseAnimation]);
+  }, [visible, internalVisible, side, width, runCloseAnimation]);
 
   // Watches internalVisible to trigger open animation after mount
   useEffect(() => {
@@ -96,7 +101,7 @@ export default function SlideModalComponent({
           />
         </Pressable>
         <Animated.View
-          className="ml-auto h-full w-4/5 max-w-sm bg-white dark:bg-gray-800 p-6"
+          className={`${side === 'left' ? 'mr-auto' : 'ml-auto'} h-full w-4/5 max-w-sm bg-white dark:bg-gray-800 p-6`}
           style={{ transform: [{ translateX }] }}
         >
           {title && (

@@ -1,13 +1,14 @@
 import { Button } from 'Components/UI/Button';
-import ModalComponent from 'Components/UI/Modal';
-import SlideModalComponent from 'Components/UI/SideModal';
 import { useRouter } from 'expo-router';
-import React, { useState } from 'react';
 import { Text, View, Pressable, TouchableOpacity } from 'react-native';
 import { initialWindowMetrics, SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import Svg, { Path } from "react-native-svg";
 import { useToggleTheme } from 'Hooks/useToggleTheme';
+import ModalComponent from 'Components/UI/Modal';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import SlideModalComponent from 'Components/UI/SideModal';
+import React, { useState } from 'react';
+import Svg, { Path } from "react-native-svg";
 
 interface ScreenContentProps {
   title: string;
@@ -20,11 +21,15 @@ export const ScreenContent: React.FC<ScreenContentProps> = ({ title, path, child
 
   const router = useRouter();
   const [logoutModalVisible, setLogoutModalVisible] = useState(false);
-  const [notificationModalVisible, setNotificationModalVisible] = useState(false);
+  const [menuModalVisible, setMenuModalVisible] = useState(false);
   
   const handleLogoutModal = () => {
     setLogoutModalVisible(true);
   };
+
+  const handleMenuModal = () => {
+    setMenuModalVisible(true);
+  }
 
   return (
     <SafeAreaProvider initialMetrics={initialWindowMetrics}>
@@ -46,14 +51,25 @@ export const ScreenContent: React.FC<ScreenContentProps> = ({ title, path, child
               <Text className="text-3xl text-white font-bold text-center">{title}</Text>
             </Pressable>
             <Button onPress={handleLogoutModal} className='p-1 relative bg-transparent'>
-              <MaterialIcons name="logout" size={30} color="white" />
+              <MaterialCommunityIcons name="logout" size={30} color="white" />
             </Button>
           </View>
         )}
         {path === "home.tsx" && (
-          <View className='w-full bg-primary-800 flex flex-row justify-between p-2 items-center '>
+          <View className='bg-white dark:bg-dark-700 w-full flex flex-row justify-between p-6 items-center '>
+            <Pressable onPress={handleMenuModal} className='p-1 relative bg-transparent'>
+              <MaterialCommunityIcons name='menu' size={30} color={isDark ? "white" : "black"} />
+            </Pressable>
             <Text className="text-3xl text-white font-bold text-center">{title}</Text>
-            <TouchableOpacity onPress={() => setIsDark(!isDark)}>
+            <TouchableOpacity
+              onPress={() => {
+                if (isDark) {
+                  void setLightTheme();
+                  return;
+                }
+                void setDarkTheme();
+              }}
+            >
             <Svg
               width={24}
               height={24}
@@ -90,14 +106,19 @@ export const ScreenContent: React.FC<ScreenContentProps> = ({ title, path, child
               <Button onPress={() => { setLogoutModalVisible(false); router.navigate('/'); }} variant="default"><Text className='text-white'>Sair</Text></Button>
             </View>
           </ModalComponent>)}
-        {notificationModalVisible && (
-          <SlideModalComponent visible={notificationModalVisible} onClose={() => setNotificationModalVisible(false)} title="Notificações">
-            <Text className='text-black dark:text-white'>Voce tem novas notificações!</Text>
+        {menuModalVisible && (
+          <SlideModalComponent side='left' visible={menuModalVisible} onClose={() => setMenuModalVisible(false)} title="Menu">
+            <Text className='text-black dark:text-white'>Menu Modal</Text>
             <View className='flex-row gap-4 mt-4 justify-end'>
-              <Button onPress={() => setNotificationModalVisible(false)} variant="outline"><Text className='text-black dark:text-white'>Cancelar</Text></Button>
-              <Button onPress={() => { setNotificationModalVisible(false); router.navigate('/'); }} variant="default"><Text className='text-white'>Ver Notificações</Text></Button>
+              <Button onPress={() => setMenuModalVisible(false)} variant="outline"><Text className='text-black dark:text-white'>Fechar</Text></Button>
             </View>
-          </SlideModalComponent>)}
+            <View className='mt-4'>
+              <Text className='text-black dark:text-white'>Opção 1</Text>
+              <Text className='text-black dark:text-white'>Opção 2</Text>
+              <Text className='text-black dark:text-white'>Opção 3</Text>
+            </View>
+          </SlideModalComponent>
+        )}
           <View className="flex-1 items-center p-[5vh]">
             {children}
           </View>
