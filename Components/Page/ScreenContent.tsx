@@ -108,10 +108,6 @@ export const ScreenContent: React.FC<ScreenContentProps> = ({ title, path, child
           </ModalComponent>)}
         {menuModalVisible && (
           <SlideModalComponent side='left' visible={menuModalVisible} onClose={() => setMenuModalVisible(false)} title="Menu">
-            <Text className='text-black dark:text-white'>Menu Modal</Text>
-            <View className='flex-row gap-4 mt-4 justify-end'>
-              <Button onPress={() => setMenuModalVisible(false)} variant="outline"><Text className='text-black dark:text-white'>Fechar</Text></Button>
-            </View>
             <View className='mt-4'>
               <Pressable onPress={() => { router.navigate('/home'); setMenuModalVisible(false); }} className='flex-row gap-2 items-center'>
                 <View className='flex-row gap-2 items-center'>

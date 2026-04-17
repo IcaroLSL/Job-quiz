@@ -1,5 +1,7 @@
+import  MaterialCommunityIcons  from '@expo/vector-icons/MaterialCommunityIcons';
 import React, { useEffect, useRef, useCallback, useState } from 'react';
 import { Animated, Modal, Pressable, Text, View, useWindowDimensions } from 'react-native';
+import { useToggleTheme } from 'Hooks/useToggleTheme';
 
 interface ModalProps {
   visible: boolean;
@@ -16,7 +18,9 @@ export default function SlideModalComponent({
   onClose,
   children,
 }: ModalProps) {
+  const { isDark } = useToggleTheme();
   const { width } = useWindowDimensions();
+  const panelWidth = Math.min(Math.max(width * 0.8, 280), 420);
   const initialTranslateX = side === 'left' ? -width : width;
   const translateX = useRef(new Animated.Value(initialTranslateX)).current;
   const backdropOpacity = useRef(new Animated.Value(0)).current;
@@ -101,13 +105,22 @@ export default function SlideModalComponent({
           />
         </Pressable>
         <Animated.View
-          className={`${side === 'left' ? 'mr-auto' : 'ml-auto'} h-full w-4/5 max-w-sm bg-white dark:bg-gray-800 p-6`}
-          style={{ transform: [{ translateX }] }}
+          className="h-full bg-white dark:bg-gray-800 p-6"
+          style={{
+            width: panelWidth,
+            alignSelf: side === 'left' ? 'flex-start' : 'flex-end',
+            transform: [{ translateX }],
+          }}
         >
           {title && (
-            <Text className="mb-4 text-lg font-bold text-gray-800 dark:text-white">
-              {title}
-            </Text>
+            <>
+              <View className="flex-row items-center justify-between mb-4">
+                <Text className="mb-4 text-5xl font-bold text-gray-800 dark:text-white">
+                  {title}
+                </Text>
+                <MaterialCommunityIcons name="window-close" size={24} color={isDark ? "white" : "black"} onPress={handleClose} className='absolute top-4 right-4' />
+              </View>
+            </>
           )}
           <View className="mb-4">{children}</View>
         </Animated.View>
