@@ -113,9 +113,22 @@ export const ScreenContent: React.FC<ScreenContentProps> = ({ title, path, child
               <Button onPress={() => setMenuModalVisible(false)} variant="outline"><Text className='text-black dark:text-white'>Fechar</Text></Button>
             </View>
             <View className='mt-4'>
-              <Text className='text-black dark:text-white'>Opção 1</Text>
-              <Text className='text-black dark:text-white'>Opção 2</Text>
-              <Text className='text-black dark:text-white'>Opção 3</Text>
+              <View className='flex-row gap-2 items-center'>
+                <MaterialCommunityIcons name='home' size={24} color={isDark ? "white" : "black"} />
+                <Text className='text-black dark:text-white'>Home</Text>
+              </View>
+            </View>
+            <View className='mt-4'>
+              <View className='flex-row gap-2 items-center'>
+                <MaterialCommunityIcons name='account' size={24} color={isDark ? "white" : "black"} />
+                <Text className='text-black dark:text-white'>Profile</Text>
+              </View>
+            </View>
+            <View className='mt-4'>
+              <View className='flex-row gap-2 items-center'>
+                <MaterialCommunityIcons name='cog' size={24} color={isDark ? "white" : "black"} />
+                <Text className='text-black dark:text-white'>Settings</Text>
+              </View>
             </View>
           </SlideModalComponent>
         )}
