@@ -113,22 +113,36 @@ export const ScreenContent: React.FC<ScreenContentProps> = ({ title, path, child
               <Button onPress={() => setMenuModalVisible(false)} variant="outline"><Text className='text-black dark:text-white'>Fechar</Text></Button>
             </View>
             <View className='mt-4'>
-              <View className='flex-row gap-2 items-center'>
-                <MaterialCommunityIcons name='home' size={24} color={isDark ? "white" : "black"} />
-                <Text className='text-black dark:text-white'>Home</Text>
-              </View>
+              <Pressable onPress={() => { router.navigate('/home'); setMenuModalVisible(false); }} className='flex-row gap-2 items-center'>
+                <View className='flex-row gap-2 items-center'>
+                  <MaterialCommunityIcons name='home' size={24} color={isDark ? "white" : "black"} />
+                  <Text className='text-black dark:text-white'>Home</Text>
+                </View>
+              </Pressable>
             </View>
             <View className='mt-4'>
-              <View className='flex-row gap-2 items-center'>
-                <MaterialCommunityIcons name='account' size={24} color={isDark ? "white" : "black"} />
-                <Text className='text-black dark:text-white'>Profile</Text>
-              </View>
+              <Pressable onPress={() => { router.navigate('/profile'); setMenuModalVisible(false); }} className='flex-row gap-2 items-center'>
+                <View className='flex-row gap-2 items-center'>
+                  <MaterialCommunityIcons name='account' size={24} color={isDark ? "white" : "black"} />
+                  <Text className='text-black dark:text-white'>Profile</Text>
+                </View>
+              </Pressable>
             </View>
             <View className='mt-4'>
-              <View className='flex-row gap-2 items-center'>
-                <MaterialCommunityIcons name='cog' size={24} color={isDark ? "white" : "black"} />
-                <Text className='text-black dark:text-white'>Settings</Text>
-              </View>
+              <Pressable onPress={() => { router.navigate('/settings'); setMenuModalVisible(false); }} className='flex-row gap-2 items-center'>
+                <View className='flex-row gap-2 items-center'>
+                  <MaterialCommunityIcons name='cog' size={24} color={isDark ? "white" : "black"} />
+                  <Text className='text-black dark:text-white'>Settings</Text>
+                </View>
+              </Pressable>
+            </View>
+            <View className='mt-4'>
+              <Pressable onPress={handleLogoutModal} className='flex-row gap-2 items-center'>
+                <View className='flex-row gap-2 items-center'>
+                  <MaterialCommunityIcons name='list-status' size={24} color={isDark ? "white" : "black"} />
+                  <Text className='text-black dark:text-white'>Quiz</Text>
+                </View>
+              </Pressable>
             </View>
           </SlideModalComponent>
         )}
